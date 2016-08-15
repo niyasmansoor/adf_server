@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://wsserver"
+	xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://wsserver"
+	xmlns:intf="http://wsserver" xmlns:tns1="http://model"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--WSDL created by Apache Axis version: 1.4 Built on Apr 22, 2006 (06:55:48 
+		PDT) -->
+	<wsdl:types>
+		<schema elementFormDefault="qualified" targetNamespace="http://wsserver"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://model" />
+			<element name="scoreLead">
+				<complexType>
+					<sequence>
+						<element name="filePath" type="xsd:string" />
+						<element name="fileBinary" type="xsd:base64Binary" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="scoreLeadResponse">
+				<complexType>
+					<sequence>
+						<element name="scoreLeadReturn" type="tns1:LeadScore" />
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+		<schema elementFormDefault="qualified" targetNamespace="http://model"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="LeadScore">
+				<sequence>
+					<element name="cityScore" type="xsd:double" />
+					<element name="contactFlagSet" type="xsd:boolean" />
+					<element name="contactTimeScore" type="xsd:double" />
+					<element name="contactTypeScore" type="xsd:double" />
+					<element name="emailScore" type="xsd:double" />
+					<element name="firstNameScore" type="xsd:double" />
+					<element name="lastNameScore" type="xsd:double" />
+					<element name="phoneNoScore" type="xsd:double" />
+					<element name="purchaseTypeScore" type="xsd:double" />
+					<element name="score" type="xsd:double" />
+					<element name="stateScore" type="xsd:double" />
+					<element name="timeFrameScore" type="xsd:double" />
+					<element name="zipCityStateScore" type="xsd:double" />
+					<element name="zipCodeScore" type="xsd:double" />
+				</sequence>
+			</complexType>
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="scoreLeadResponse">
+
+		<wsdl:part element="impl:scoreLeadResponse" name="parameters">
+
+		</wsdl:part>
+
+	</wsdl:message>
+
+	<wsdl:message name="scoreLeadRequest">
+
+		<wsdl:part element="impl:scoreLead" name="parameters">
+
+		</wsdl:part>
+
+	</wsdl:message>
+
+	<wsdl:portType name="ScoreLeadWS">
+
+		<wsdl:operation name="scoreLead">
+
+			<wsdl:input message="impl:scoreLeadRequest" name="scoreLeadRequest">
+
+			</wsdl:input>
+
+			<wsdl:output message="impl:scoreLeadResponse" name="scoreLeadResponse">
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+	<wsdl:binding name="ScoreLeadWSSoapBinding" type="impl:ScoreLeadWS">
+
+		<wsdlsoap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<wsdl:operation name="scoreLead">
+
+			<wsdlsoap:operation soapAction="" />
+
+			<wsdl:input name="scoreLeadRequest">
+
+				<wsdlsoap:body use="literal" />
+
+			</wsdl:input>
+
+			<wsdl:output name="scoreLeadResponse">
+
+				<wsdlsoap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:service name="ScoreLeadWSService">
+
+		<wsdl:port binding="impl:ScoreLeadWSSoapBinding" name="ScoreLeadWS">
+
+			<wsdlsoap:address
+				location="http://localhost:8080/adfserver/services/ScoreLeadWS" />
+
+		</wsdl:port>
+
+	</wsdl:service>
+
+</wsdl:definitions>

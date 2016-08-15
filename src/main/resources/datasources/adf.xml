@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?ADF version="1.0"?>
+<adf>
+	<prospect status="new">
+		<id sequence="1">2354224</id>
+		<requestdate>2012-06-17T20:53:07</requestdate>
+		<vehicle interest="buy" status="new">
+			<id></id>
+			<year>2012</year>
+			<make>Hyundai</make>
+			<model>Sonata</model>
+			<vin />
+			<stock />
+			<trim>GLS Automatic</trim>
+			<doors></doors>
+			<bodystyle />
+			<transmission />
+			<odometer />
+			<colorcombination>
+				<interiorcolor>No Preference</interiorcolor>
+				<exteriorcolor>Harbor Gray Metallic</exteriorcolor>
+				<preference>1</preference>
+			</colorcombination>
+			<imagetag />
+			<price />
+			<pricecomments />
+			<finance>
+				<method>finance</method>
+				<amount type="downpayment"></amount>
+				<amount type="monthly" />
+				<balance />
+			</finance>
+			<comments />
+		</vehicle>
+		<customer>
+			<contact>
+				<name part="first">Richard</name>
+				<name part="last">Brooks</name>
+				<email>rbrooks@comcast.net</email>
+				<phone type="voice" time="Day" preferredcontact="1">2303242891</phone>
+				<address>
+					<street line="1">101 CARTER ST</street>
+					<street line="2"></street>
+					<city>La Porte</city>
+					<regioncode>IN</regioncode>
+					<postalcode>46350</postalcode>
+					<country>USA</country>
+				</address>
+			</contact>
+			<timeframe>
+				<description>within 1 week</description>
+			</timeframe>
+			<comments></comments>
+		</customer>
+	</prospect>
+</adf>
